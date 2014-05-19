@@ -10,8 +10,10 @@ namespace Formule1.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection")
+            : base("Formule1")
         {
         }
+
+        public System.Data.Entity.DbSet<Formule1.Models.ProfileViewModel> ProfileViewModels { get; set; }
     }
 }

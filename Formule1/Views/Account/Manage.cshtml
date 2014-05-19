@@ -1,11 +1,12 @@
 ﻿@using Formule1.Models;
 @using Microsoft.AspNet.Identity;
+@using System.Web.Security;
 @{
     ViewBag.Title = "Manage Account";
 }
 
 <h2>@ViewBag.Title.</h2>
-
+<h2>@User.Identity.GetUserId()</h2>
 <p class="text-success">@ViewBag.StatusMessage</p>
 <div class="row">
     <div class="col-md-12">

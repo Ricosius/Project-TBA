@@ -7,8 +7,10 @@ namespace Formule1.Models
         [Required]
         [Display(Name = "User name")]
         public string UserName { get; set; }
+        
     }
 
+ 
     public class ManageUserViewModel
     {
         [Required]
@@ -59,5 +61,10 @@ namespace Formule1.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Display(Name = "Team Name")]
+        public string TeamName { get; set; }
     }
+
+  
 }

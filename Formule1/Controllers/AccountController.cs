@@ -15,10 +15,20 @@ namespace Formule1.Controllers
     [Authorize]
     public class AccountController : Controller
     {
+        
         public AccountController()
             : this(new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext())))
         {
         }
+        [HttpPost]
+      
+        public ActionResult Profile()
+        {
+    
+         
+            return View();
+        }
+
 
         public AccountController(UserManager<ApplicationUser> userManager)
         {
@@ -59,6 +69,7 @@ namespace Formule1.Controllers
 
             // If we got this far, something failed, redisplay form
             return View(model);
+            
         }
 
         //
@@ -308,6 +319,7 @@ namespace Formule1.Controllers
             ViewBag.ShowRemoveButton = HasPassword() || linkedAccounts.Count > 1;
             return (ActionResult)PartialView("_RemoveAccountPartial", linkedAccounts);
         }
+
 
         protected override void Dispose(bool disposing)
         {
