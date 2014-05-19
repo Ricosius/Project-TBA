@@ -36,7 +36,6 @@ namespace Formule1.Controllers
         }
 
         public UserManager<ApplicationUser> UserManager { get; private set; }
-
         //
         // GET: /Account/Login
         [AllowAnonymous]
