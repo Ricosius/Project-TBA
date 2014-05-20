@@ -10,6 +10,7 @@ namespace Formule1.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(Formule1.Models.ApplicationDbContext context)

@@ -7,9 +7,14 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Formule1.Models;
+using System.Web.Security;
+using Microsoft.AspNet.Identity;
+using WebMatrix.WebData;
+
 
 namespace Formule1.Controllers
 {
+
     public class ProfileController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -39,6 +44,7 @@ namespace Formule1.Controllers
         // GET: /Profile/Create
         public ActionResult Create()
         {
+            ViewBag.userID = User.Identity.GetUserId();
             return View();
         }
 
@@ -47,8 +53,10 @@ namespace Formule1.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="TeamName")] ProfileViewModel profileviewmodel)
+        public ActionResult Create([Bind(Include="TeamName,UserNameID,Money")] ProfileViewModel profileviewmodel)
         {
+   
+            
             if (ModelState.IsValid)
             {
                 db.ProfileViewModels.Add(profileviewmodel);

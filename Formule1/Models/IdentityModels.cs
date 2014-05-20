@@ -15,5 +15,7 @@ namespace Formule1.Models
         }
 
         public System.Data.Entity.DbSet<Formule1.Models.ProfileViewModel> ProfileViewModels { get; set; }
+       
+        
     }
 }

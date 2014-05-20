@@ -1,7 +1,10 @@
 ﻿@model Formule1.Models.ProfileViewModel
+@using Microsoft.AspNet.Identity;
+@using System.Web.Security;         
 
 @{
     Layout = null;
+    var userid = @User.Identity.GetUserId();
 }
 
 <!DOCTYPE html>
@@ -15,28 +18,15 @@
     @using (Html.BeginForm()) 
     {
         @Html.AntiForgeryToken()
-        
+        <h2>@User.Identity.GetUserId()</h2>
         <div class="form-horizontal">
             <h4>ProfileViewModel</h4>
             <hr />
             @Html.ValidationSummary(true)
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.UserNameID, new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.UserNameID)
-                    @Html.ValidationMessageFor(model => model.UserNameID)
-                </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.Money, new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Money)
-                    @Html.ValidationMessageFor(model => model.Money)
-                </div>
-            </div>
-    
+            @Html.Hidden("UserNameID",(object)userid)
+
+       
+            @Html.Hidden("Money", "200000")
             <div class="form-group">
                 @Html.LabelFor(model => model.TeamName, new { @class = "control-label col-md-2" })
                 <div class="col-md-10">

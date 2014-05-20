@@ -9,24 +9,39 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
 using Formule1.Models;
+using System.Web.Security;
 
 namespace Formule1.Controllers
 {
     [Authorize]
     public class AccountController : Controller
     {
-        
+        private ApplicationDbContext db = new ApplicationDbContext();
         public AccountController()
             : this(new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext())))
         {
         }
-        [HttpPost]
-      
+        
+
+        [AllowAnonymous]
         public ActionResult Profile()
         {
-    
-         
+
             return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Profile([Bind(Include = "TeamName")] ApplicationUser registerviewmodel)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Users.Add(registerviewmodel);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(registerviewmodel);
         }
 
 

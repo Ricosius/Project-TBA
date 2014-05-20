@@ -47,6 +47,7 @@ namespace Formule1.Models
 
     public class RegisterViewModel
     {
+        public int ID { get; set; }
         [Required]
         [Display(Name = "User name")]
         public string UserName { get; set; }
