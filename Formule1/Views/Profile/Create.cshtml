@@ -38,8 +38,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.EngineID, new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.EngineID)
-                    @Html.ValidationMessageFor(model => model.EngineID)
+                  @Html.DropDownListFor(model => model.EngineID, new SelectList(ViewBag.Engine, "ID", "Name"), "Select an Engine")
                 </div>
             </div>
     

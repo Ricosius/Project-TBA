@@ -44,6 +44,7 @@ namespace Formule1.Controllers
         // GET: /Profile/Create
         public ActionResult Create()
         {
+            ViewBag.Engine = db.ProfileViewModels.ToList();
             ViewBag.userID = User.Identity.GetUserId();
             return View();
         }
