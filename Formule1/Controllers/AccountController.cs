@@ -23,26 +23,6 @@ namespace Formule1.Controllers
         }
         
 
-        [AllowAnonymous]
-        public ActionResult Profile()
-        {
-
-            return View();
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Profile([Bind(Include = "TeamName")] ApplicationUser registerviewmodel)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Users.Add(registerviewmodel);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            return View(registerviewmodel);
-        }
 
 
         public AccountController(UserManager<ApplicationUser> userManager)

@@ -7,126 +7,110 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Formule1.Models;
-using System.Web.Security;
-using Microsoft.AspNet.Identity;
-using WebMatrix.WebData;
-
 
 namespace Formule1.Controllers
 {
-
-    public class ProfileController : Controller
+    public class DriverController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: /Profile/
+        // GET: /Driver/
         public ActionResult Index()
         {
-            var userID = User.Identity.GetUserId();
-            var Profile = from p in db.ProfileViewModels select p;
-            Profile = Profile.Where(s => s.UserNameID.Equals(userID));
-
-            
-            
-            return View(db.ProfileViewModels.ToList());
-            
+            return View(db.DriverModels.ToList());
         }
 
-        // GET: /Profile/Details/5
+        // GET: /Driver/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ProfileViewModel profileviewmodel = db.ProfileViewModels.Find(id);
-            if (profileviewmodel == null)
+            DriverModel drivermodel = db.DriverModels.Find(id);
+            if (drivermodel == null)
             {
                 return HttpNotFound();
             }
-            return View(profileviewmodel);
+            return View(drivermodel);
         }
 
-        // GET: /Profile/Create
+        // GET: /Driver/Create
         public ActionResult Create()
         {
-            ViewBag.Engine = db.EngineModels.ToList();
-            ViewBag.userID = User.Identity.GetUserId();
             return View();
         }
 
-        // POST: /Profile/Create
+        // POST: /Driver/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="TeamName,UserNameID,Money,EngineId")] ProfileViewModel profileviewmodel)
+        public ActionResult Create([Bind(Include="ID,Name,Money")] DriverModel drivermodel)
         {
-   
-            
             if (ModelState.IsValid)
             {
-                db.ProfileViewModels.Add(profileviewmodel);
+                db.DriverModels.Add(drivermodel);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(profileviewmodel);
+            return View(drivermodel);
         }
 
-        // GET: /Profile/Edit/5
+        // GET: /Driver/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ProfileViewModel profileviewmodel = db.ProfileViewModels.Find(id);
-            if (profileviewmodel == null)
+            DriverModel drivermodel = db.DriverModels.Find(id);
+            if (drivermodel == null)
             {
                 return HttpNotFound();
             }
-            return View(profileviewmodel);
+            return View(drivermodel);
         }
 
-        // POST: /Profile/Edit/5
+        // POST: /Driver/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="ID,UserNameID,Money,TeamName,EngineID,DriverID,ChassisID")] ProfileViewModel profileviewmodel)
+        public ActionResult Edit([Bind(Include="ID,Name,Money")] DriverModel drivermodel)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(profileviewmodel).State = EntityState.Modified;
+                db.Entry(drivermodel).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(profileviewmodel);
+            return View(drivermodel);
         }
 
-        // GET: /Profile/Delete/5
+        // GET: /Driver/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ProfileViewModel profileviewmodel = db.ProfileViewModels.Find(id);
-            if (profileviewmodel == null)
+            DriverModel drivermodel = db.DriverModels.Find(id);
+            if (drivermodel == null)
             {
                 return HttpNotFound();
             }
-            return View(profileviewmodel);
+            return View(drivermodel);
         }
 
-        // POST: /Profile/Delete/5
+        // POST: /Driver/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            ProfileViewModel profileviewmodel = db.ProfileViewModels.Find(id);
-            db.ProfileViewModels.Remove(profileviewmodel);
+            DriverModel drivermodel = db.DriverModels.Find(id);
+            db.DriverModels.Remove(drivermodel);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

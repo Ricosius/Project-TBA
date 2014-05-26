@@ -15,6 +15,12 @@ namespace Formule1.Models
         }
 
         public System.Data.Entity.DbSet<Formule1.Models.ProfileViewModel> ProfileViewModels { get; set; }
+
+        public System.Data.Entity.DbSet<Formule1.Models.EngineModel> EngineModels { get; set; }
+
+        public System.Data.Entity.DbSet<Formule1.Models.ChassisModel> ChassisModels { get; set; }
+
+        public System.Data.Entity.DbSet<Formule1.Models.DriverModel> DriverModels { get; set; }
        
         
     }

@@ -160,6 +160,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ChassisController.cs" />
+    <Compile Include="Controllers\DriverController.cs" />
+    <Compile Include="Controllers\EngineController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Global.asax.cs">
@@ -168,6 +171,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ItemsViewModel.cs" />
     <Compile Include="Models\ProfileViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -224,6 +228,21 @@
     <Content Include="Views\Profile\Edit.cshtml" />
     <Content Include="Views\Profile\Index.cshtml" />
     <Content Include="Views\Account\Profile.cshtml" />
+    <Content Include="Views\Engine\Create.cshtml" />
+    <Content Include="Views\Engine\Delete.cshtml" />
+    <Content Include="Views\Engine\Details.cshtml" />
+    <Content Include="Views\Engine\Edit.cshtml" />
+    <Content Include="Views\Engine\Index.cshtml" />
+    <Content Include="Views\Chassis\Create.cshtml" />
+    <Content Include="Views\Chassis\Delete.cshtml" />
+    <Content Include="Views\Chassis\Details.cshtml" />
+    <Content Include="Views\Chassis\Edit.cshtml" />
+    <Content Include="Views\Chassis\Index.cshtml" />
+    <Content Include="Views\Driver\Create.cshtml" />
+    <Content Include="Views\Driver\Delete.cshtml" />
+    <Content Include="Views\Driver\Details.cshtml" />
+    <Content Include="Views\Driver\Edit.cshtml" />
+    <Content Include="Views\Driver\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
