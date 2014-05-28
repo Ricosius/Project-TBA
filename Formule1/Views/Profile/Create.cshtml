@@ -46,16 +46,16 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.DriverID, new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.DriverID)
-                    @Html.ValidationMessageFor(model => model.DriverID)
+
+                    @Html.DropDownListFor(model => model.DriverID, new SelectList(ViewBag.Engine, "ID", "Name", "Money"), "Select a Driver")
                 </div>
             </div>
     
             <div class="form-group">
                 @Html.LabelFor(model => model.ChassisID, new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.ChassisID)
-                    @Html.ValidationMessageFor(model => model.ChassisID)
+
+                    @Html.DropDownListFor(model => model.ChassisID, new SelectList(ViewBag.Engine, "ID", "Name", "Money"), "Select a Chassis")
                 </div>
             </div>
     
