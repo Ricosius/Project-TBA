@@ -13,6 +13,7 @@ namespace Formule1.Models
         public string TeamName { get; set; }
         public int EngineID { get; set; }
         public int DriverID { get; set; }
+        public int SecondDriverID { get; set; }
         public int ChassisID { get; set; }
     }
 }

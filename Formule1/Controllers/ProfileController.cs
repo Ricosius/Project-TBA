@@ -53,6 +53,7 @@ namespace Formule1.Controllers
             ViewBag.Engine = db.EngineModels.ToList();
             ViewBag.Chassis = db.ChassisModels.ToList();
             ViewBag.Driver = db.DriverModels.ToList();
+            ViewBag.Driver2 = db.DriverModels.ToList();
             ViewBag.userID = User.Identity.GetUserId();
             return View();
         }
@@ -62,7 +63,7 @@ namespace Formule1.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="TeamName,UserNameID,Money,EngineId,ChassisId,DriverId")] ProfileViewModel profileviewmodel)
+        public ActionResult Create([Bind(Include="TeamName,UserNameID,Money,EngineID,ChassisID,DriverID,SecondDriverID")] ProfileViewModel profileviewmodel)
         {
    
             

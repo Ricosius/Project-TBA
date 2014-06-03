@@ -163,3 +163,5 @@ C:\Users\Rico\Documents\Repo\Project TBA\Formule1\bin\Microsoft.Owin.Security.Mi
 C:\Users\Rico\Documents\Repo\Project TBA\Formule1\obj\Debug\Formule1.csprojResolveAssemblyReference.cache
 C:\Users\Rico\Documents\Repo\Project TBA\Formule1\obj\Debug\Formule1.dll
 C:\Users\Rico\Documents\Repo\Project TBA\Formule1\obj\Debug\Formule1.pdb
+C:\Users\Rico\Documents\Repo\Project TBA\Formule1\obj\Debug\Formule1.Migrations.Seconddriver.resources
+C:\Users\Rico\Documents\Repo\Project TBA\Formule1\obj\Debug\Formule1.csproj.GenerateResource.Cache
