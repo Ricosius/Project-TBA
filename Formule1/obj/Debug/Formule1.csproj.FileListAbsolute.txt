@@ -165,3 +165,5 @@ C:\Users\Rico\Documents\Repo\Project TBA\Formule1\obj\Debug\Formule1.dll
 C:\Users\Rico\Documents\Repo\Project TBA\Formule1\obj\Debug\Formule1.pdb
 C:\Users\Rico\Documents\Repo\Project TBA\Formule1\obj\Debug\Formule1.Migrations.Seconddriver.resources
 C:\Users\Rico\Documents\Repo\Project TBA\Formule1\obj\Debug\Formule1.csproj.GenerateResource.Cache
+C:\Users\RM\Documents\Repo\F1\Formule1\obj\Debug\Formule1.Migrations.Seconddriver.resources
+C:\Users\RM\Documents\Repo\F1\Formule1\obj\Debug\Formule1.csproj.GenerateResource.Cache

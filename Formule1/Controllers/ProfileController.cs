@@ -22,13 +22,16 @@ namespace Formule1.Controllers
         // GET: /Profile/
         public ActionResult Index()
         {
-            var userID = User.Identity.GetUserId();
-            var Profile = from p in db.ProfileViewModels select p;
-            Profile = Profile.Where(s => s.UserNameID.Equals(userID));
+
+       
+
+            Guid user = new Guid(User.Identity.GetUserId());
+            var Profile = from p in db.ProfileViewModels.Where(p => p.UserNameID == user) select p;
+            //Profile = Profile.Where(s => s.UserNameID.Equals(userID));
 
             
             
-            return View(db.ProfileViewModels.ToList());
+            return View(Profile);
             
         }
 
@@ -55,6 +58,7 @@ namespace Formule1.Controllers
             ViewBag.Driver = db.DriverModels.ToList();
             ViewBag.Driver2 = db.DriverModels.ToList();
             ViewBag.userID = User.Identity.GetUserId();
+            
             return View();
         }
 

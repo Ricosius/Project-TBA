@@ -28,7 +28,7 @@
        
             @Html.Hidden("Money", "200000")
             <div class="form-group">
-                @Html.LabelFor(model => model.TeamName, new { @class = "control-label col-md-2" })
+                Teamname
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.TeamName)
                     @Html.ValidationMessageFor(model => model.TeamName)
@@ -36,7 +36,7 @@
             </div>
     
             <div class="form-group">
-                @Html.LabelFor(model => model.EngineID, new { @class = "control-label col-md-2" })
+                Engine
                 <div class="col-md-10">
              
                          @Html.DropDownListFor(model => model.EngineID, new SelectList(ViewBag.Engine, "ID", "Name","Money"), "Select an Engine")
@@ -44,7 +44,7 @@
             </div>
     
             <div class="form-group">
-                @Html.LabelFor(model => model.DriverID, new { @class = "control-label col-md-2" })
+                Driver
                 <div class="col-md-10">
 
                     @Html.DropDownListFor(model => model.DriverID, new SelectList(ViewBag.Driver, "ID", "Name", "Money"), "Select a Driver")
@@ -52,7 +52,7 @@
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.SecondDriverID, new { @class = "control-label col-md-2" })
+               Second Driver
                 <div class="col-md-10">
 
                     @Html.DropDownListFor(model => model.SecondDriverID, new SelectList(ViewBag.Driver2, "ID", "Name", "Money"), "Select a second Driver")
@@ -60,7 +60,7 @@
             </div>
     
             <div class="form-group">
-                @Html.LabelFor(model => model.ChassisID, new { @class = "control-label col-md-2" })
+               Chassis
                 <div class="col-md-10">
 
                     @Html.DropDownListFor(model => model.ChassisID, new SelectList(ViewBag.Chassis, "ID", "Name", "Money"), "Select a Chassis")
