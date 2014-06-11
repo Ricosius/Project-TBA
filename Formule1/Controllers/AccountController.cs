@@ -21,8 +21,11 @@ namespace Formule1.Controllers
             : this(new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext())))
         {
         }
-        
 
+        public bool HasProfile()
+        {
+            return false;
+        }
 
 
         public AccountController(UserManager<ApplicationUser> userManager)

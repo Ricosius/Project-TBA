@@ -22,17 +22,20 @@ namespace Formule1.Controllers
         // GET: /Profile/
         public ActionResult Index()
         {
-
-       
-
+            //Used for 1 profile 1 account
             Guid user = new Guid(User.Identity.GetUserId());
-            var Profile = from p in db.ProfileViewModels.Where(p => p.UserNameID == user) select p;
-            //Profile = Profile.Where(s => s.UserNameID.Equals(userID));
-
+            Formule1.Models.ProfileViewModel profile;
+            var Profiles = (from p in db.ProfileViewModels.Where(p => p.UserNameID == user) select p).ToList(); 
+            if(Profiles.Count == 0)
+            {
+                profile = null;
+            }
+            else
+            {
+                profile = Profiles[0];
+            }
             
-            
-            return View(Profile);
-            
+            return View(profile);            
         }
 
         // GET: /Profile/Details/5
@@ -53,6 +56,20 @@ namespace Formule1.Controllers
         // GET: /Profile/Create
         public ActionResult Create()
         {
+            //Used for 1 profile 1 account
+            Guid user = new Guid(User.Identity.GetUserId());
+            Formule1.Models.ProfileViewModel profile;
+            var Profiles = (from p in db.ProfileViewModels.Where(p => p.UserNameID == user) select p).ToList();
+            if (Profiles.Count == 0)
+            {
+                profile = null;
+            }
+            else
+            {
+                profile = Profiles[0];
+            }
+
+            //All lists for dropdownmenu
             ViewBag.Engine = db.EngineModels.ToList();
             ViewBag.Chassis = db.ChassisModels.ToList();
             ViewBag.Driver = db.DriverModels.ToList();
@@ -67,10 +84,10 @@ namespace Formule1.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="TeamName,UserNameID,Money,EngineID,ChassisID,DriverID,SecondDriverID")] ProfileViewModel profileviewmodel)
+        public ActionResult Create([Bind(Include="TeamName,UserNameID,EngineID,ChassisID,DriverID,SecondDriverID")] ProfileViewModel profileviewmodel)
         {
-   
-            
+            //Add money value
+            profileviewmodel.Money = 20000;
             if (ModelState.IsValid)
             {
                 db.ProfileViewModels.Add(profileviewmodel);

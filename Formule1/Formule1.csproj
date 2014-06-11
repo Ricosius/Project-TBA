@@ -172,6 +172,10 @@
     <Compile Include="Migrations\201406020917013_Seconddriver.Designer.cs">
       <DependentUpon>201406020917013_Seconddriver.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201406101314422_addvirtualdriver.cs" />
+    <Compile Include="Migrations\201406101314422_addvirtualdriver.Designer.cs">
+      <DependentUpon>201406101314422_addvirtualdriver.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -261,6 +265,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201406020917013_Seconddriver.resx">
       <DependentUpon>201406020917013_Seconddriver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201406101314422_addvirtualdriver.resx">
+      <DependentUpon>201406101314422_addvirtualdriver.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
