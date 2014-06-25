@@ -176,6 +176,10 @@
     <Compile Include="Migrations\201406101314422_addvirtualdriver.Designer.cs">
       <DependentUpon>201406101314422_addvirtualdriver.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201406250708285_virtualshit.cs" />
+    <Compile Include="Migrations\201406250708285_virtualshit.Designer.cs">
+      <DependentUpon>201406250708285_virtualshit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -268,6 +272,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201406101314422_addvirtualdriver.resx">
       <DependentUpon>201406101314422_addvirtualdriver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201406250708285_virtualshit.resx">
+      <DependentUpon>201406250708285_virtualshit.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

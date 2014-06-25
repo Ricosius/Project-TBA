@@ -84,7 +84,7 @@ namespace Formule1.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="TeamName,UserNameID,EngineID,ChassisID,DriverID,SecondDriverID")] ProfileViewModel profileviewmodel)
+        public ActionResult Create(ProfileViewModel profileviewmodel)
         {
             //Add money value
             profileviewmodel.Money = 20000;

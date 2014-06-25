@@ -23,66 +23,71 @@ else
    
     @if(Request.IsAuthenticated)
     {
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.UserNameID)
-            </th>
-            <th>
-              UserName
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Money)
-            </th>
-            <th>
+     <div>
+        <h4>ProfileViewModel</h4>
+    	<hr />
+        <dl class="dl-horizontal">
+            <dt>
+                Username
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => User.Identity.Name)
+            </dd>
+    
+            <dt>
                 @Html.DisplayNameFor(model => model.TeamName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EngineID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DriverID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SecondDriverID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ChassisID)
-            </th>
-            <th></th>
-        </tr>
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TeamName)
+            </dd>
     
 
-        <tr>
-            <td>
-                @Html.DisplayFor(model => model.UserNameID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => User.Identity.Name)
-            </td>
-            <td>
+            <dt>
+                @Html.DisplayNameFor(model => model.Money)
+            </dt>
+
+            <dd>
                 @Html.DisplayFor(model => model.Money)
-            </td>
-            <td>
-                @Html.DisplayFor(model => model.TeamName)
-            </td>
-            <td>
-                @Html.DisplayFor(model => model.EngineModel.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(model => model.DriverID)
-            </td>
-            <td>
+            </dd>
+            <dt>
+                Engine
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Engine.Name)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Driver)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Driver.Name)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.SecondDriverID)
+            </dt>
+
+            <dd>
+
                 @Html.DisplayFor(model => model.SecondDriverID)
-            </td>
-            <td>
-                @Html.DisplayFor(model => model.ChassisID)
-            </td>
-            
-        </tr>
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Chassis)
+            </dt>
     
+            <dd>
+                @Html.DisplayFor(model => model.Chassis.Name)
+            </dd>
     
-    </table>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID })
+        </p>
     }
 </body>
 </html>  

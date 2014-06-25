@@ -9,10 +9,6 @@
 
 @if (Model == null)
 {
-    <h1>You can only create 1 profile</h1>
-}
-else
-{
     <!DOCTYPE html>
 
 <html>
@@ -45,7 +41,7 @@ else
                 Engine
                 <div class="col-md-10">
              
-                         @Html.DropDownListFor(model => model.EngineModel, new SelectList(ViewBag.Engine, "ID", "Name","Money"), "Select an Engine")
+                         @Html.DropDownListFor(model => model.EngineID, new SelectList(ViewBag.Engine, "ID", "Name","Money"), "Select an Engine")
                 </div>
             </div>
     
@@ -86,5 +82,10 @@ else
     </div>
 </body>
 </html>
+    
+}
+else
+{
+    <h1>You can only create 1 profile</h1>
 }
 

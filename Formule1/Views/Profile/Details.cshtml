@@ -17,19 +17,11 @@
     	<hr />
         <dl class="dl-horizontal">
             <dt>
-                @Html.DisplayNameFor(model => model.UserNameID)
+                Username
             </dt>
     
             <dd>
-                @Html.DisplayFor(model => model.UserNameID)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Money)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Money)
+                @Html.DisplayFor(model => User.Identity.Name)
             </dd>
     
             <dt>
@@ -40,6 +32,14 @@
                 @Html.DisplayFor(model => model.TeamName)
             </dd>
     
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Money)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Money)
+            </dd>
             <dt>
                 @Html.DisplayNameFor(model => model.EngineID)
             </dt>
@@ -56,6 +56,14 @@
                 @Html.DisplayFor(model => model.DriverID)
             </dd>
     
+            <dt>
+                @Html.DisplayNameFor(model => model.SecondDriverID)
+            </dt>
+
+            <dd>
+
+                @Html.DisplayFor(model => model.SecondDriverID)
+            </dd>
             <dt>
                 @Html.DisplayNameFor(model => model.ChassisID)
             </dt>

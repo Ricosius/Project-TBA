@@ -16,8 +16,9 @@ namespace Formule1.Models
         public int SecondDriverID { get; set; }
         public int ChassisID { get; set; }
 
-        public virtual EngineModel EngineModel { get; set; }
+        public virtual EngineModel Engine { get; set; }
         public virtual DriverModel Driver { get; set; }
+        public virtual ChassisModel Chassis { get; set; }
   
     }
 }
